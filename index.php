@@ -2,6 +2,8 @@
 
 class Mobil{
 
+    
+
     public $merk;
     public $model;
     public $tahun;
@@ -20,7 +22,7 @@ class Mobil{
         echo 'Model:' . $this->model.'<br>';
         echo 'Warna:' . $this->warna.'<br>';
         echo 'Tahun:' . $this->tahun.'<br>';
-        echo 'Pemilik'. $nama.'<br>';
+        echo 'Pemilik:'. $nama.'<br>';
         echo 'Keterangan:' .$ket.'<br>';
     }
 
@@ -34,17 +36,29 @@ class Mobil{
 
 }
 
+class Kendaraan extends Mobil{
+    public $jenis;
+
+    public function bergerak()
+    {
+        echo 'Kendaraan sedang bergerak';
+    }
+}
+
 // Objek
 
-$mobil = new Mobil();
-$mobil->merk = 'Avanza';
-$mobil->model='Nova';
-$mobil->tahun=2023;
-$mobil->warna ='putih';
+$kendaraan = new Mobil();
+$kendaraan =new Kendaraan();
+$kendaraan->merk = 'Avanza';
+$kendaraan->model='Nova';
+$kendaraan->tahun=2023;
+$kendaraan->warna ='putih';
 
 
-// mmm
+// Panggil method
 $ket ='Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum nemo voluptatum laboriosam, animi rem nostrum provident delectus omnis incidunt?.';
 // Pangil Method
 
-$mobil->cek('roys',$ket);
+$kendaraan->cek('roys',$ket);
+$kendaraan->merk ='BWM';
+echo $kendaraan->cek('Roys','');
